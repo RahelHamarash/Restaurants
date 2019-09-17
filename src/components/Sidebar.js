@@ -24,7 +24,7 @@ const SideNavContent = () => {
                 </li>
 
                 <li>
-                    <Link to="/level" className="waves-effect" aria-expanded="false">
+                    <Link to="/level" className="waves-effect" aria-expanded={ this.state.toggleButton ? "false" : "true" } onCLick={this.ToggleHandler}>
                         <i className="mdi mdi-share-variant"></i>
                         <span> Multi Level </span>
                         <span className="menu-arrow"></span>
@@ -32,7 +32,7 @@ const SideNavContent = () => {
 
                     <ul className="nav-second-level nav" aria-expanded="false">
                         <li>
-                            <Link to="/" className="side-nav-link-ref">Level 1.1</Link>
+                            <Link to="/level" className="side-nav-link-ref">Level 1.1</Link>
                         </li>
                         <li>
                             <Link to="/" className="has-dropdown">Level 1.2
@@ -107,7 +107,25 @@ class Sidebar extends Component {
         super(props);
         this.handleOtherClick = this.handleOtherClick.bind(this);
         this.initMenu = this.initMenu.bind(this);
+        this.state = {
+
+            toggleButton : false 
+        }
+
+
+        this.ToggleHandler = this.ToggleHandler.bind(this) ;
+
     }
+
+    ToggleHandler(){
+
+        this.setSate(state => ({
+
+            toggleButton : !state.toggleButton 
+        } ));
+        
+    }
+
 
     /**
      * Bind event

@@ -1,11 +1,10 @@
-import {React , Component} from 'react' ;
+import React , {Component} from 'react' ;
 
 class Level extends Component {
 
-    render (){
+    render() {
 
         return (
-
             <h1> Level </h1>
         )
     }

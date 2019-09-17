@@ -11,7 +11,7 @@ class Content extends Component {
             <Router>
                 <Switch>
                     <Route exact path="/dashboard" component={Home}/>
-                    <Route path="/Level" component={Level}/>    
+                    <Route exact path="/level" component={Level}/>    
                 </Switch>
             </Router>
         )

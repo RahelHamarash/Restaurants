@@ -13,6 +13,7 @@ const Logout = React.lazy(() => import('./pages/auth/Logout'));
 const ForgetPassword = React.lazy(() => import('./pages/account/ForgetPassword'));
 const Register = React.lazy(() => import('./pages/account/Register'));
 const ConfirmAccount = React.lazy(() => import('./pages/account/Confirm'));
+const LevelPage = React.lazy(() => import('./pages/Level') ) ;
 
 // handle auth and authorization
 
@@ -52,6 +53,8 @@ const routes = [
     component: () => <Redirect to="/dashboard" />,
     route: PrivateRoute
   },
+  { path: '/level', name: 'Level', component: Dashboard, route: PrivateRoute, roles: ['Admin'], title: 'Level' },
+
   
 ]
 
