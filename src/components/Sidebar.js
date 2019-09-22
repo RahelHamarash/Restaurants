@@ -9,46 +9,185 @@ import MetisMenu from 'metismenujs/dist/metismenujs';
 import profilePic from '../assets/images/users/user-1.jpg';
 
 
-const SideNavContent = () => {
+const SideNavContent = (props) => {
+
     return <React.Fragment>
 
         <div id="sidebar-menu">
             <ul className="metismenu" id="side-menu">
-                <li className="menu-title">Navigation</li>
+
+                {/* Dashboard */}
+                <li className="menu-title">سەرەتا</li>
 
                 <li>
                     <Link to="/" className="waves-effect side-nav-link-ref">
                         <i className="mdi mdi-view-dashboard"></i>
-                        <span> Dashboard </span>
+                        <span> داشبۆرد </span>
                     </Link>
                 </li>
+                {/* Inventory */}
+                <li className="menu-title">کۆگا</li>
 
-                <li>
-                    <Link to="/level" className="waves-effect" aria-expanded={ this.state.toggleButton ? "false" : "true" } onCLick={this.ToggleHandler}>
-                        <i className="mdi mdi-share-variant"></i>
-                        <span> Multi Level </span>
-                        <span className="menu-arrow"></span>
-                    </Link>
-
-                    <ul className="nav-second-level nav" aria-expanded="false">
-                        <li>
-                            <Link to="/level" className="side-nav-link-ref">Level 1.1</Link>
+                    <ul className="nav-second-level nav" >
+                        
+                        <li className={props.state.classButton ? "active" : ""}>
+                            <Link to="#" className="waves-effect"  aria-expanded="false" onClick={props.classHandler} >
+                                <i className="mdi mdi-share-variant"></i>
+                                <span > پۆل </span>
+                                <span className="menu-arrow "></span>
+                            </Link>
+                            
+                            <li style={{ display: props.state.classButton ? 'inline' : 'none' }}>
+                                <Link to="/level" className="side-nav-link-ref" >Level 1.1</Link>
+                            </li>
                         </li>
-                        <li>
-                            <Link to="/" className="has-dropdown">Level 1.2
+                        <li className={props.state.itemsButton ? "active" : ""}>
+                            <Link to="#" className="has-dropdown" onClick={props.itemsHandler}>ماددەکان
                                 <span className="menu-arrow"></span>
                             </Link>
-                            <ul className="nav-third-level nav" aria-expanded="false">
+                            <ul className="nav-third-level nav" style={{ display: props.state.itemsButton ? 'inline' : 'none' }}>
                                 <li>
-                                    <Link to="/" className="side-nav-link-ref">Level 2.1</Link>
+                                    <Link to="#" className="side-nav-link-ref" >Level 2.1</Link>
                                 </li>
                                 <li>
-                                    <Link to="/" className="side-nav-link-ref">Level 2.2</Link>
+                                    <Link to="#" className="side-nav-link-ref">Level 2.2</Link>
                                 </li>
+                                
                             </ul>
                         </li>
+                        <li className="menu-title">داخڵکردن</li>
+                        <li className={props.state.providerButton ? "active" : ""}>
+                            <Link to="#" className="has-dropdown" onClick={props.providerHandler}>دابینکەر
+                                <span className="menu-arrow"></span>
+                            </Link>
+                            <ul className="nav-third-level nav" style={{ display: props.state.providerButton ? 'inline' : 'none' }}>
+                                <li>
+                                    <Link to="#" className="side-nav-link-ref" >Level 2.1</Link>
+                                </li>
+                                <li>
+                                    <Link to="#" className="side-nav-link-ref">Level 2.2</Link>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <li className={props.state.purchaseButton ? "active" : ""}>
+                            <Link to="#" className="has-dropdown" onClick={props.purchaseHandler}>کڕین
+                                <span className="menu-arrow"></span>
+                            </Link>
+                            <ul className="nav-third-level nav" style={{ display: props.state.purchaseButton ? 'inline' : 'none' }}>
+                                <li>
+                                    <Link to="#" className="side-nav-link-ref" >Level 2.1</Link>
+                                </li>
+                                <li>
+                                    <Link to="#" className="side-nav-link-ref">Level 2.2</Link>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <li className="menu-title">داهات</li>
+                        <li className={props.state.saleButton ? "active" : ""}>
+                            <Link to="#" className="has-dropdown" onClick={props.saleHandler}>فرۆشتن
+                                <span className="menu-arrow"></span>
+                            </Link>
+                            <ul className="nav-third-level nav" style={{ display: props.state.saleButton ? 'inline' : 'none' }}>
+                                <li>
+                                    <Link to="#" className="side-nav-link-ref" >Level 2.1</Link>
+                                </li>
+                                <li>
+                                    <Link to="#" className="side-nav-link-ref">Level 2.2</Link>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <li className={props.state.safeButton ? "active" : ""}>
+                            <Link to="#" className="has-dropdown" onClick={props.safeHandler}>کاسە
+                                <span className="menu-arrow"></span>
+                            </Link>
+                            <ul className="nav-third-level nav" style={{ display: props.state.safeButton ? 'inline' : 'none' }}>
+                                <li>
+                                    <Link to="#" className="side-nav-link-ref" >Level 2.1</Link>
+                                </li>
+                                <li>
+                                    <Link to="#" className="side-nav-link-ref">Level 2.2</Link>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <li className={props.state.billTypesButton ? "active" : ""}>
+                            <Link to="#" className="has-dropdown" onClick={props.billTypesHandler}>جۆرەکانی خەرجی
+                                <span className="menu-arrow"></span>
+                            </Link>
+                            <ul className="nav-third-level nav" style={{ display: props.state.billTypesButton ? 'inline' : 'none' }}>
+                                <li>
+                                    <Link to="#" className="side-nav-link-ref" >Level 2.1</Link>
+                                </li>
+                                <li>
+                                    <Link to="#" className="side-nav-link-ref">Level 2.2</Link>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <li className={props.state.billsButton ? "active" : ""}>
+                            <Link to="#" className="has-dropdown" onClick={props.billsHandler}> خەرجییەکان
+                                <span className="menu-arrow"></span>
+                            </Link>
+                            <ul className="nav-third-level nav" style={{ display: props.state.billsButton ? 'inline' : 'none' }}>
+                                <li>
+                                    <Link to="#" className="side-nav-link-ref" >Level 2.1</Link>
+                                </li>
+                                <li>
+                                    <Link to="#" className="side-nav-link-ref">Level 2.2</Link>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <li className={props.state.reportButton ? "active" : ""}>
+                            <Link to="#" className="has-dropdown" onClick={props.reportHandler}> ڕاپۆرت
+                                <span className="menu-arrow"></span>
+                            </Link>
+                            <ul className="nav-third-level nav" style={{ display: props.state.reportButton ? 'inline' : 'none' }}>
+                                <li>
+                                    <Link to="#" className="side-nav-link-ref" >Level 2.1</Link>
+                                </li>
+                                <li>
+                                    <Link to="#" className="side-nav-link-ref">Level 2.2</Link>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <li className="menu-title">سیستەم</li>
+
+                        <li className={props.state.userButton ? "active" : ""}>
+                            <Link to="#" className="has-dropdown" onClick={props.userHandler}> بەکارهێنەر
+                                <span className="menu-arrow"></span>
+                            </Link>
+                            <ul className="nav-third-level nav" style={{ display: props.state.userButton ? 'inline' : 'none' }}>
+                                <li>
+                                    <Link to="#" className="side-nav-link-ref" >Level 2.1</Link>
+                                </li>
+                                <li>
+                                    <Link to="#" className="side-nav-link-ref">Level 2.2</Link>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <li className={props.state.tablesButton ? "active" : ""}>
+                            <Link to="#" className="has-dropdown" onClick={props.tablesHandler}>مێزەکان
+                                <span className="menu-arrow"></span>
+                            </Link>
+                            <ul className="nav-third-level nav" style={{ display: props.state.tablesButton ? 'inline' : 'none' }}>
+                                <li>
+                                    <Link to="#" className="side-nav-link-ref" >Level 2.1</Link>
+                                </li>
+                                <li>
+                                    <Link to="#" className="side-nav-link-ref">Level 2.2</Link>
+                                </li>
+                                
+                            </ul>
+                        </li>
+
+
                     </ul>
-                </li>
             </ul>
         </div>
         <div className="clearfix"></div>
@@ -107,24 +246,141 @@ class Sidebar extends Component {
         super(props);
         this.handleOtherClick = this.handleOtherClick.bind(this);
         this.initMenu = this.initMenu.bind(this);
+
         this.state = {
 
-            toggleButton : false 
+            classButton : false ,
+            itemsButton : false,
+            providerButton : false,
+            purchaseButton : false ,
+            saleButton : false,
+            safeButton : false,
+            billsButton : false,
+            reportButton : false,
+            userButton : false ,
+            tablesButton : false
         }
 
+        this.ClassHandler = this.ClassHandler.bind(this) ;
+        this.ItemsHandler = this.ItemsHandler.bind(this) ;
+        this.ProviderHandler = this.ProviderHandler.bind(this) ;
+        this.PurchaseHandler = this.PurchaseHandler.bind(this);
+        this.SaleHandler = this.SaleHandler.bind(this);
+        this.SafeHandler = this.SafeHandler.bind(this);
+        this.BillTypesHandler = this.BillTypesHandler.bind(this) ;
+        this.BillsHandler = this.BillsHandler.bind(this) ; 
+        this.ReportHandler = this.ReportHandler.bind(this) ;
+        this.UserHandler = this.UserHandler.bind(this) ;
+        this.TablesHandler = this.TablesHandler.bind(this) ;
 
-        this.ToggleHandler = this.ToggleHandler.bind(this) ;
 
     }
 
-    ToggleHandler(){
+    ClassHandler(e){
 
-        this.setSate(state => ({
-
-            toggleButton : !state.toggleButton 
-        } ));
+        e.preventDefault() ;
+        this.setState((state) => ({
+            classButton: !state.classButton 
+          }));
         
     }
+
+    ItemsHandler(e){
+
+        e.preventDefault();
+        this.setState((state) => ({
+
+            itemsButton : !state.itemsButton
+        }))
+    }
+
+    ProviderHandler(e){
+
+        e.preventDefault();
+        this.setState((state)=>({
+
+            providerButton : !state.providerButton
+        }))
+    }
+
+    PurchaseHandler(e){
+
+        e.preventDefault();
+        this.setState((state) => ({
+
+            purchaseButton : !state.purchaseButton
+        }))
+    }
+
+    SaleHandler(e){
+
+        e.preventDefault() ;
+        this.setState((state) => ({
+
+            saleButton : !state.saleButton
+        }))
+    }
+
+    SafeHandler(e){
+
+        e.preventDefault() ;
+        this.setState((state) => ({
+
+            safeButton : !state.safeButton
+        }))
+    }
+
+    BillTypesHandler(e){
+
+        e.preventDefault() ;
+        this.setState((state) => ({
+
+            billTypesButton : !state.billTypesButton
+        }))
+    }
+
+    BillsHandler(e){
+
+        e.preventDefault() ;
+        this.setState((state) => ({
+
+            billsButton : !state.billsButton
+        }))
+        
+    }
+
+    ReportHandler(e){
+
+        e.preventDefault() ;
+        this.setState((state) => ({
+
+            reportButton : !state.reportButton
+        }))
+        
+    }
+
+    UserHandler(e){
+
+
+        e.preventDefault() ;
+        this.setState((state) => ({
+
+            userButton : !state.userButton
+        }))
+
+    }
+
+    TablesHandler(e){
+
+
+        e.preventDefault() ;
+        this.setState((state) => ({
+
+            tablesButton : !state.tablesButton
+        }))
+
+    }
+
 
 
     /**
@@ -231,8 +487,8 @@ class Sidebar extends Component {
         return (
             <React.Fragment>
                 <div className='left-side-menu' ref={node => this.menuNodeRef = node}>
-                    {!isCondensed && <PerfectScrollbar><UserProfile /><SideNavContent /></PerfectScrollbar>}
-                    {isCondensed && <UserProfile /> && <SideNavContent />}
+                    {<PerfectScrollbar><UserProfile /><SideNavContent state={this.state} classHandler={this.ClassHandler} itemsHandler={this.ItemsHandler} providerHandler={this.ProviderHandler} purchaseHandler={this.PurchaseHandler} saleHandler={this.SaleHandler} safeHandler={this.SafeHandler} billTypesHandler={this.BillTypesHandler} billsHandler={this.BillsHandler} reportHandler={this.ReportHandler} userHandler={this.UserHandler} tablesHandler={this.TablesHandler}/></PerfectScrollbar>}
+                    {isCondensed && <UserProfile /> && <SideNavContent state={this.state} classHandler={this.ClassHandler} itemsHandler={this.ItemsHandler} providerHandler={this.ProviderHandler} purchaseHandler={this.PurchaseHandler} saleHandler={this.SaleHandler} safeHandler={this.SafeHandler} billTypesHandler={this.BillTypesHandler} billsHandler={this.BillsHandler} reportHandler={this.ReportHandler} userHandler={this.UserHandler} tablesHandler={this.TablesHandler}/>}
                 </div>
             </React.Fragment>
         );

@@ -1,7 +1,7 @@
 import React , {Component} from 'react' ;
 import {BrowserRouter as Router , Switch , Route } from 'react-router-dom' ;
-import Home from './Home' ;
-import Level from './Level' ;
+import Home from './KrdPages/Home' ;
+import Level from './KrdPages/Level' ;
 class Content extends Component {
 
     render(){
